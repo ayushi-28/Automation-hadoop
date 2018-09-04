@@ -1,0 +1,79 @@
+<html>
+<head>
+<style>
+
+div.inn {
+    margin-left: 14%;
+}
+
+div.inner {
+    margin-left: 18%;
+}
+div.out {
+    margin-left: 10%;
+}
+</style>
+
+</head>
+<body bgcolor='black' style='color:white'>
+
+<h2 style='color:darkblue'>Create Hadoop Cluster <----> Quick Options</h2>
+
+<form action="http://127.0.0.1/cgi-bin/services.cgi" method="GET">
+
+<div class='out'>
+	<h3>General Configuration</h3>
+	<div class ='inn' >
+	Cluster Name: <input type='text' name='clus' required>
+	</div>
+</div>
+
+<div class='out'>
+	<h3>Software requirements:</h3>
+	<div class ='inn' >
+	<u><h4>Choose Hadoop version:</h4></u>
+	</div>
+<div class='inner'>
+<input type="radio"  name="h1" value="hv1" required> Hadoop v1 <br/></br>
+<input type="radio"  name="h1" value="hv2" required>  Hadoop v2 <br/></br>
+</div>
+<div class ='inn' >
+<u><h4>Select the number of nodes:</h4></u>
+<div class='inner'>
+<select id="mySelect" onchange="myFunction()" name='nm'>
+  <option value="1">1
+  <option value="2">2
+  <option value="3">3
+  <option value="4">4
+</select>
+<p id="demo"></p>
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("mySelect").value;
+	if (x == 1){
+		document.getElementById("demo").innerHTML = "Errorr! !! Minimum 2 nodes required";}
+         else
+		{document.getElementById("demo").innerHTML = "1 namenode " + (x-1) +" other nodes";}
+}
+</script>
+
+</div>
+<div class ='inn' >
+<u><h4>==> Choose configuration for other nodes:</h4></u>
+</div>
+<div class='inner'> 
+<input type="radio" name="ss"  value="od" required > only datanode</br> </br>
+<input type="radio" name="ss"  value="dwn" required> datanode with tasktracker/nodemanager</br></br>
+<input type="radio" name="ss"  value="on" required> only tasktracker/nodemanager</br></br>
+</div>
+</div>
+<p>
+<center>
+<input type="reset" value="Reset Now">&nbsp&nbsp&nbsp
+<input type="submit" value="Get Cluster"></center></p>
+</form>
+
+</body>
+</html>
