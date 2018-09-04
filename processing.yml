@@ -1,0 +1,20 @@
+- hosts: h2n1
+   tasks:
+     - name: Starting namenode
+       command: /hadoop2/sbin/hadoop-daemon.sh start namenode
+       tags: j
+     
+     - name: Starting resourcemanager
+       command: /hadoop2/sbin/yarn-daemon.sh start resourcemanager
+       tags: k
+
+ - hosts: h2o1
+   tasks:
+     - name: Starting datanode
+       command: /hadoop2/sbin/hadoop-daemon.sh start datanode
+       tags: l
+
+     - name: Starting nodemanager
+       command: /hadoop2/sbin/yarn-daemon.sh start nodemanager
+       tags: m 
+
