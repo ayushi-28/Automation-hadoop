@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Processing services</title>
+<style>
+div.out{
+margin-left:10%
+}
+
+div.in{
+margin-left:13%
+}
+
+div.inn{
+margin-left:2%
+}
+
+</style>
+</head>
+<body bgcolor='black' style="color:white">
+<h1 style="color:blue">Processing services</h1>
+<form enctype="multipart/form-data" method="post" action="http://127.0.0.1/cgi-bin/process.cgi">
+<div class='out'>
+Upload your file:</br></br>
+<div class ='in'><input type="file" name='file' required accept='.py,.cgi,.txt,.csv,.repo,.html,.doc,.xml'></div>
+</br>
+</br>
+</div>
+<div class= 'out'>
+<p>Choose a processing option to be performed:</p></br>
+<div class ='in'>
+Wordcount<input type="radio" name='choice' value='wordcount'></br>   </br>
+Wordmean<input type="radio" name='choice' value='wordmean' >  </br> </br>
+Wordmedian<input type="radio" name='choice' value='wordmedian' >  </br> </br>
+Wordstandarddeviation:<input type="radio" name='choice' value='wordstandarddeviation'> </br>  </br>
+Sudoku<input type="radio" name='choice' value='sudoku' > </br>  </br>
+Grep<input type="radio" name='choice' value='grep' >&nbsp&nbsp&nbsp<input type="text" name='word' style="width:100px" > </br></br></br>
+
+</div>
+</div>
+<div class ='out'>
+Enter the name of directory to store your result: &nbsp&nbsp&nbsp<input type='text' name='folder'></br></br>
+</br>
+</div>
+<center>
+<input type="reset" value="Reset Now">&nbsp&nbsp&nbsp
+<input type="submit" value="Show_result">
+</center>
+</form>
+
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Docker Options</title>
+<style>
+div.out{
+margin-left:10%
+}
+
+div.in{
+margin-left:13%
+}
+</style>
+
+</head>
+
+<body bgcolor='black' style='color:white'>
+<font color='blue'>
+<h2>Cluster Setup :</h2>
+</font>
+<form action='http://127.0.0.1/cgi-bin/launchingcont.cgi' method='POST'>
+<div class='out'>
+Enter the name of cluster:&nbsp&nbsp<input type='text'  name='namee' required></br></br>
+Enter the size of cluster:&nbsp&nbsp&nbsp<input type='number' name='sz' required></br></br>
+</div>
+<div class='out'>
+Choose version for hadoop</br></br>
+<div class='in'>
+&nbspVersion 1&nbsp <input type='radio' name='version' value='1'>&nbsp&nbsp&nbsp
+Version 2&nbsp<input type='radio' name='version' value='2'></br></br>
+</div>
+</div>
+<!--
+<div class='out'>
+Choose launch type:</br></br>
+<div class='in'>
+&nbspStepwise&nbsp <input type='radio' name='inst' value='step'>&nbsp&nbsp&nbsp
+Automatic&nbsp<input type='radio' name='inst' value='auto'></br></br>
+</div>
+</div>-->
+<div class ='out'>
+Do you want to shutdown container after launch:</br></br>
+<div class='in'>
+&nbsp&nbspYES &nbsp <input type='radio' name='shut' value='yes'> &nbsp
+&nbspNO &nbsp<input type='radio' name='shut' value='no'></br>
+<p style='color:red'><h5>**Warning:  In case you do not choose to select, 
+all containers will shutdown automatically within 10 seconds of launch**</h5></p>
+</div>
+</div>
+<center>
+<input type='submit' value='Launch-now'>
+</center>
+</form>
+</body>
+</html>
+
+
